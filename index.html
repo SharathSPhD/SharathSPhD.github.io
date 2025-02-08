@@ -1,1 +1,73 @@
-"Hello World" 
+---
+layout: default
+---
+
+<section class="hero">
+  <h1>Dr. Sharath Sathish</h1>
+  <p class="subtitle">Data Science & AI Leader | Engineering Innovation</p>
+  <p class="intro">
+    Specialized in developing cutting-edge AI/ML solutions for commodity pricing and engineering optimization at bp, 
+    while leveraging decades of experience in complex systems engineering.
+  </p>
+</section>
+
+<section class="highlights">
+  <h2>Experience Highlights</h2>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <h3>Data Science & AI</h3>
+      <p>Leading digital transformation initiatives in retail and energy sectors, delivering multi-million-dollar impact in pricing optimization.</p>
+    </div>
+    <div class="highlight-card">
+      <h3>Research & Innovation</h3>
+      <p>PhD researcher and inventor with multiple patents in sustainable energy technologies, particularly focused on supercritical CO2 power systems.</p>
+    </div>
+    <div class="highlight-card">
+      <h3>Engineering Excellence</h3>
+      <p>Led breakthrough innovations in aerospace technology at ISRO and architected AI solutions for industrial asset optimization at GE Research.</p>
+    </div>
+  </div>
+</section>
+
+<section class="recent-posts">
+  <h2>Recent Articles</h2>
+  <div class="posts-grid">
+    {% for post in site.posts limit:3 %}
+    <article class="post-card">
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <time>{{ post.date | date: "%B %d, %Y" }}</time>
+      <p>{{ post.excerpt }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  <a href="/blog" class="view-all">View all articles →</a>
+</section>
+
+<section class="featured-projects">
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+    {% for project in site.data.projects %}
+    {% if project.featured %}
+    <div class="project-card">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      <div class="project-tags">
+        {% for tag in project.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <a href="{{ project.github }}" class="project-link" target="_blank">View Project →</a>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Get in Touch</h2>
+  <div class="contact-links">
+    <a href="https://linkedin.com/in/{{ site.author.linkedin }}" class="contact-button" target="_blank">LinkedIn</a>
+    <a href="https://github.com/{{ site.author.github }}" class="contact-button" target="_blank">GitHub</a>
+    <a href="https://scholar.google.com/citations?user={{ site.author.google_scholar }}" class="contact-button" target="_blank">Google Scholar</a>
+  </div>
+</section>

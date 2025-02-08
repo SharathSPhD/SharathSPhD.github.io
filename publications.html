@@ -1,0 +1,56 @@
+---
+layout: default
+title: Publications
+---
+
+<section class="publications-header">
+  <h1>Publications</h1>
+  <p>Research publications in turbomachinery, supercritical CO2 power systems, and AI/ML applications</p>
+</section>
+
+<section class="publications">
+  {% for pub in site.data.publications %}
+  <article class="publication-card">
+    <h3>{{ pub.title }}</h3>
+    <div class="pub-meta">
+      {% if pub.journal %}
+      <p>{{ pub.journal }}{% if pub.volume %}, {{ pub.volume }}{% endif %}</p>
+      {% endif %}
+      {% if pub.conference %}
+      <p>{{ pub.conference }}{% if pub.location %}, {{ pub.location }}{% endif %}</p>
+      {% endif %}
+      <time>{{ pub.date }}</time>
+    </div>
+    {% if pub.doi %}
+    <a href="https://doi.org/{{ pub.doi }}" class="doi-link" target="_blank">DOI: {{ pub.doi }}</a>
+    {% endif %}
+    {% if pub.url %}
+    <a href="{{ pub.url }}" class="pub-link" target="_blank">View Publication →</a>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+<section class="google-scholar">
+  <div class="scholar-card">
+    <h2>Complete Publication History</h2>
+    <p>View all publications, citations, and academic metrics on Google Scholar</p>
+    <a href="https://scholar.google.com/citations?user={{ site.author.google_scholar }}" class="scholar-button" target="_blank">
+      View Google Scholar Profile →
+    </a>
+  </div>
+</section>
+
+<section class="patents">
+  <h2>Patents & Trade Secrets</h2>
+  <div class="patents-grid">
+    <div class="patent-card">
+      <h3>AI/ML Trade Secrets</h3>
+      <p>Multiple trade secrets filed in AI/ML/Reinforcement Learning for pricing data science</p>
+    </div>
+    <div class="patent-card">
+      <h3>Energy Innovation</h3>
+      <p>Novel cycles for waste heat recovery applications</p>
+    </div>
+  </div>
+</section>

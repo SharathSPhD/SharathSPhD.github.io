@@ -1,0 +1,16 @@
+- title: "Coffee Causality"
+  description: "Causal inference analysis in the coffee industry, exploring relationships between various factors affecting coffee production and consumption"
+  tags: ["Causal Inference", "Data Science", "Python"]
+  github: "https://github.com/SharathSPhD/coffee_causality"
+  featured: true
+
+- title: "CCM Multiplication"
+  description: "Advanced computational methods for multiplication, focusing on efficient algorithms and implementations"
+  tags: ["Algorithms", "Optimization", "Python"]
+  github: "https://github.com/SharathSPhD/ccmMul"
+  featured: true
+
+- title: "IAIGPT"
+  description: "AI-driven industrial automation system leveraging advanced language models"
+  tags: ["AI", "Industrial Automation", "Machine Learning"]
+  featured: false

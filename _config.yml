@@ -1,0 +1,54 @@
+title: Dr. Sharath Sathish
+description: >-
+  Personal website of Dr. Sharath Sathish, featuring work in AI/ML, 
+  Engineering, and Research
+baseurl: ""
+url: "https://sharathsphd.github.io"
+
+# Author information
+author:
+  name: Dr. Sharath Sathish
+  email: sharath.sathish@gmail.com
+  linkedin: sharath-s
+  github: SharathSPhD
+  google_scholar: dcyu5ucAAAAJ
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+  projects:
+    output: true
+    permalink: /projects/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Dr. Sharath Sathish"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git/
+  - .github/
+  - README.md

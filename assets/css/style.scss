@@ -1,0 +1,243 @@
+---
+---
+
+// Variables
+$primary-color: #0066cc;
+$secondary-color: #f4f4f4;
+$text-color: #333;
+$light-text: #666;
+$border-color: #ddd;
+
+// Base styles
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+// Links
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+// Header & Navigation
+header {
+  background: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    
+    a {
+      color: $text-color;
+      font-weight: 500;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+// Hero Section
+.hero {
+  padding: 6rem 0;
+  background: linear-gradient(to right, #f8f9fa, $secondary-color);
+  text-align: center;
+  
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    color: $light-text;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+}
+
+// Cards
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+}
+
+// Blog Posts
+.post-card {
+  @extend .card;
+  margin-bottom: 2rem;
+  
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .post-meta {
+    color: $light-text;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    
+    .tag {
+      background: $secondary-color;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// Projects
+.project-card {
+  @extend .card;
+  margin-bottom: 2rem;
+  
+  .project-links {
+    margin-top: 1.5rem;
+  }
+}
+
+// Publications
+.publication-card {
+  @extend .card;
+  margin-bottom: 2rem;
+  
+  .pub-meta {
+    color: $light-text;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+}
+
+// Buttons
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: $primary-color;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  
+  &:hover {
+    background: darken($primary-color, 10%);
+    color: white;
+  }
+}
+
+// Footer
+footer {
+  background: $secondary-color;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    
+    a {
+      color: $light-text;
+      font-weight: 500;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  
+  .copyright {
+    text-align: center;
+    color: $light-text;
+    margin: 0;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  header nav {
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .hero {
+    padding: 4rem 0;
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .project-card,
+  .post-card,
+  .publication-card {
+    padding: 1.5rem;
+  }
+}
+
+// Print styles
+@media print {
+  header, footer {
+    display: none;
+  }
+  
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: $text-color;
+  }
+}

@@ -1,0 +1,34 @@
+---
+layout: default
+title: Projects
+---
+
+<section class="projects-header">
+  <h1>Projects</h1>
+  <p>A collection of research and development projects in AI, engineering, and technology</p>
+</section>
+
+<section class="projects">
+  {% for project in site.data.projects %}
+  <article class="project-card">
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.description }}</p>
+    
+    {% if project.tags %}
+    <div class="tags">
+      {% for tag in project.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    
+    {% if project.github %}
+    <div class="project-links">
+      <a href="{{ project.github }}" class="button" target="_blank">
+        View on GitHub →
+      </a>
+    </div>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
